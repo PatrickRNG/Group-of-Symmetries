@@ -42,4 +42,15 @@ submitBtn.addEventListener('click', (e) => {
 		line.appendChild(lineNumber);
 	}
 	
+	if (submitBtn.addEventListener('click', () => {
+		if (arr.length > 0) {
+            while (line.hasChildNodes()) {
+                line.removeChild(line.lastChild);
+            }
+            arr.splice(0, arr.length);
+        }
+	}));
+	
+	console.log(arr);
+	
 });
