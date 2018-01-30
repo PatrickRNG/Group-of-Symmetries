@@ -21,6 +21,21 @@
     margin-bottom: 20px;
 }
 
+#wrapper a.button {
+	margin: 20px 0;
+	background: #fff;
+	color: #000;
+	text-decoration: none;
+	padding: 6px 20px;
+	border: 1px solid #111;
+	border-radius: 3px;
+}
+
+#wrapper a.button:hover {
+	border-color: #666;
+	color: #666;
+}
+
 #wrapper #line-one {
     border-top: 1px solid #111;
     padding-top: 10px;
