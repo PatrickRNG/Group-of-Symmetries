@@ -28,29 +28,52 @@ let submitBtn = document.getElementById('button-js');
 //    console.log(typeof(i));    
 //});
 
-submitBtn.addEventListener('click', (e) => {
+let count = 0;
+
+submitBtn.addEventListener('click', e => {
 	e.preventDefault();
 	let arr = [];
+	count++;
 	
-	for (let i = 0; i < number.value; i++) {
-		arr.push(i + 1);
-		
-		let lineNumber = document.createElement('div');
-		lineNumber.classList.add('line-number');
-		lineNumber.innerHTML = arr[i];
-		
-		line.appendChild(lineNumber);
+//	if (!line.hasChildNodes()) {
+//		for (let i = 0; i < number.value; i++) {
+//			arr.push(i + 1);
+//
+//			let lineNumber = document.createElement('div');
+//			lineNumber.classList.add('line-number');
+//			lineNumber.innerHTML = arr[i];
+//
+//			line.appendChild(lineNumber);
+//
+//		}
+//
+//	} else {
+//		while (line.hasChildNodes()) {
+//			line.removeChild(line.lastChild);
+//		}
+//		arr.splice(0, arr.lenght);
+//	}
+	
+	do {
+		for (let i = 0; i < number.value; i++) {
+			arr.push(i + 1);
+
+			let lineNumber = document.createElement('div');
+			lineNumber.classList.add('line-number');
+			lineNumber.innerHTML = arr[i];
+
+			line.appendChild(lineNumber);
+
+		}
+	} while (!line.hasChildNodes());
+	
+	if (count == 2) {
+		while (line.hasChildNodes()) {
+			line.removeChild(line.lastChild);
+			count = 0;
+		}
 	}
-	
-	if (submitBtn.addEventListener('click', () => {
-		if (arr.length > 0) {
-            while (line.hasChildNodes()) {
-                line.removeChild(line.lastChild);
-            }
-            arr.splice(0, arr.length);
-        }
-	}));
-	
-	console.log(arr);
-	
+
+	console.log(arr, count);
+
 });
