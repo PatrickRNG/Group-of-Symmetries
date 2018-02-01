@@ -62,7 +62,7 @@ submitBtn.addEventListener('click', e => {
 			lineNumber.classList.add('line-number');
 			lineNumber.innerHTML = arr[i];
 
-			line.appendChild(lineNumber);
+			line.appendChild(lineNumber)
 
 		}
 	} while (!line.hasChildNodes());
